@@ -9,7 +9,7 @@ Instead of writing multiple conditionals (`if`, `switch`) for handling each WebS
 
 - 📦 `dispatcher/dispatcher.go`: Core dispatcher implementation
 - 🧪 `main.go`: Basic WebSocket server using the dispatcher
-- 🧾 JS snippet: Sample client code to send events
+- 🧾 `check.js`: Sample client code to send events
 
 ## 💡 How It Works
 
