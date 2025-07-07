@@ -31,7 +31,7 @@ type WssContext struct {
 //	Example:
 //	{
 //	  "type": "join",
-//	  "payload": { "challengeId": "abc123" }
+//	  "payload": { "message": "heyyy" }
 //	}
 type WssMessage struct {
 	Type    string          `json:"type"`    // event name, used for dispatching

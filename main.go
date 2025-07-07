@@ -4,7 +4,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gorilla/websocket"
 	"github.com/lijuuu/WssEventDispatcher/dispatcher"
 	"github.com/lijuuu/WssEventDispatcher/handlers"
 )
@@ -19,13 +18,6 @@ func main() {
 	// register a handler for the "ping" event
 	// responds with {"type": "pong"}
 	d.Register("fizz", handlers.Fizz)
-
-	// register a handler for the "fizz" event
-	// responds with {"type": "buzz"}
-	d.Register("fizz", func(ctx *dispatcher.WssContext) error {
-		log.Println("fizz received")
-		return ctx.Conn.WriteMessage(websocket.TextMessage, []byte(`{"type":"buzz"}`))
-	})
 
 	// define the WebSocket HTTP endpoint
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
